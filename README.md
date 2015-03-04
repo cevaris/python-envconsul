@@ -2,12 +2,13 @@
 
 Python environment variable wrapper around Consul key/value storage. When instantiated, `EnvConsol` fetches the key value data for a defined service from Consul. These environment variables are retrievable via the path they were stored in Consul. 
 
-For example if 
+For example if we insert a database name for specific services in Consul
 
+```shell
+curl -X -d 'db.sqlite3' \
+	http://localhost:8500/v1/kv/web00.django.test/databases/default/name
 ```
-curl -X -d 'db.sqlite3' http://localhost:8500/v1/kv/web00.django.test/databases/default/name
-```
-Can be retrieved via 
+EnvConsul can fetch and be queried like so
 
 ```python
 ENV_CONSUL = envconsul.EnvConsul('web00.django.test')
