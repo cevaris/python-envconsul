@@ -28,7 +28,7 @@ DATABASE_NAME = ENV_CONSUL.get_str('/databases/default/name')
 ## Install
 
 ```shell
-pip install python-envconsul
+pip install envconsul
 ```
 
 ## Example Usage
