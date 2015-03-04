@@ -1,0 +1,7 @@
+{
+    "service":{
+	"name": "web00.django.test",
+	"tags": ["django"],
+	"port": 8000
+    }
+}
