@@ -5,12 +5,13 @@ Python environment variable wrapper around Consul key/value storage. When instan
 For example if we insert a database name for specific services in Consul
 
 ```shell
-curl -X -d 'db.sqlite3' \
+curl -X PUT -d 'db.sqlite3' \
 	http://localhost:8500/v1/kv/web00.django.test/databases/default/name
 ```
 EnvConsul can fetch and be queried like so
 
 ```python
+import envconsul
 ENV_CONSUL = envconsul.EnvConsul('web00.django.test')
 DATABASE_NAME = ENV_CONSUL.get_str('/databases/default/engine')
 ```
@@ -26,7 +27,7 @@ DATABASE_NAME = ENV_CONSUL.get_str('/databases/default/engine')
 
 ## Install
 
-```
+```shell
 pip install python-envconsul
 ```
 
@@ -41,9 +42,10 @@ ENV_CONSUL = envconsul.EnvConsul('web00.django.test')
 
 # Or if using remote Consul instance
 ENV_CONSUL = envconsul.EnvConsul(
-    host='my.consul.host.com',
+    service_name='web00.django.test',
+    host="localhost",
     port=8500,
-    service_name='web00.django.test')
+)
 ```
 
 ### Retrieval of Environment Variables

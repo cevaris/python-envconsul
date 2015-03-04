@@ -15,7 +15,7 @@ from .consts import (
 class EnvConsul(collections.Mapping):
     """Collect Consul key/value data into a dict"""
 
-    def __init__(self, host=DEFAULT_HOST, port=DEFAULT_PORT, service_name=None, *args, **kwargs):
+    def __init__(self, service_name=None, host=DEFAULT_HOST, port=DEFAULT_PORT, *args, **kwargs):
         self._d = dict(*args, **kwargs)
 
         self.consul = False

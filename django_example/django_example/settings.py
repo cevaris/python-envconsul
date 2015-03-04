@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 import envconsul
 ENV_CONSUL = envconsul.EnvConsul(
+    service_name='web00.django.test',
     host="localhost",
     port=8500,
-    service_name='web00.django.test')
+)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
