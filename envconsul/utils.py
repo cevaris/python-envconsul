@@ -1,8 +1,5 @@
 import copy
 
-import consulate
-
-
 def strip_key_header(text_to_strip, dictionary):
     dict_copy = copy.copy(dictionary)
     for k, v in dictionary.items():

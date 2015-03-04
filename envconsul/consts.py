@@ -1,0 +1,4 @@
+
+LIST_DELIM = ','
+DEFAULT_HOST = 'localhost'
+DEFAULT_PORT = 8500
