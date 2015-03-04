@@ -1,0 +1,2 @@
+ipython==3.0.0
+pytest==2.6.4
