@@ -2,6 +2,18 @@
 
 Python environment variable wrapper around Consul key/value storage. When instantiated, `EnvConsol` fetches the key value data for a defined service from Consul. These environment variables are retrievable via the path they were stored in Consul. 
 
+For example if 
+
+```
+curl -X -d 'db.sqlite3' http://localhost:8500/v1/kv/web00.django.test/databases/default/name
+```
+Can be retrieved via 
+
+```python
+ENV_CONSUL = envconsul.EnvConsul('web00.django.test')
+DATABASE_NAME = ENV_CONSUL.get_str('/databases/default/engine')
+```
+
 ## Features
 
 - Retrieve Consul key/value environment variables service
@@ -35,18 +47,21 @@ ENV_CONSUL = envconsul.EnvConsul(
 
 ### Retrieval of Environment Variables
 
-```python
+```
 # Taking from django settings file
 
+# http://localhost:8500/v1/kv/web00.django.test/debug = "True"
 # Retrun bool type
 DEBUG = ENV_CONSUL.get_bool('/debug', True)
 ...
 
+# http://localhost:8500/v1/kv/web00.django.test/allowed_hosts = "example.com, example.com."
 # Return list type
 ALLOWED_HOSTS = []
 ALLOWED_HOSTS += ENV_CONSUL.get_list('/allowed_hosts', [])
 ...
 
+# http://localhost:8500/v1/kv/web00.django.test/installed_apps = "django.contrib.admin, env"
 # Return tuple type
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -58,6 +73,8 @@ INSTALLED_APPS = (
 INSTALLED_APPS += ENV_CONSUL.get_tuple('/installed_apps', ['django.contrib.admin',])
 ...
 
+# http://localhost:8500/v1/kv/web00.django.test/databases/default/engine = "django.db.backends.sqlite3"
+# http://localhost:8500/v1/kv/web00.django.test/databases/default/name = "db.sqlite3"
 # Dictionary example, where Consul key/value path  '/databases/default/engine'
 # maps to the following nested dictionary
 DATABASES = {
