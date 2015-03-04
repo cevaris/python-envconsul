@@ -51,6 +51,7 @@ ENV_CONSUL = envconsul.EnvConsul(
 ### Retrieval of Environment Variables
 
 #### Example Django settings file
+[https://github.com/cevaris/python-envconsul/blob/master/django_example/django_example/settings.py](Full example here)
 
 
 ##### Bool type
