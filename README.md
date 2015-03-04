@@ -51,7 +51,7 @@ ENV_CONSUL = envconsul.EnvConsul(
 ### Retrieval of Environment Variables
 
 #### Example Django settings file
-[https://github.com/cevaris/python-envconsul/blob/master/django_example/django_example/settings.py](Full example here)
+[Full example here Django settings file here](https://github.com/cevaris/python-envconsul/blob/master/django_example/django_example/settings.py)
 
 
 ##### Bool type
@@ -114,6 +114,9 @@ DATABASES = {
 ```python
 REDIS_HOST = ENV_CONSUL.get('/redis_host')
 ```
+
+[Full example here Django settings file here](https://github.com/cevaris/python-envconsul/blob/master/django_example/django_example/settings.py)
+
 
 
 ## For Development

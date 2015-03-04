@@ -1,3 +1,5 @@
+import envconsul
+version = envconsul.__version__
 readme = open('README.md').read()
 
 try:
@@ -7,7 +9,7 @@ except ImportError:
 
 setup(
     name='envconsul',
-    version='0.0.1',
+    version=version,
     description="""Environment Variable and Settings Management via Consul""",
     long_description="""TODO""",
     author='Adam Cardenas',
