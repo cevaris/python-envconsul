@@ -50,18 +50,24 @@ ENV_CONSUL = envconsul.EnvConsul(
 
 ### Retrieval of Environment Variables
 
+#### Example Django settings file
+
+
+##### Bool type
+
+curl -x PUT -d 'True' http://localhost:8500/v1/kv/web00.django.test/debug
+
 ```
-# Taking from django settings file
-
-# http://localhost:8500/v1/kv/web00.django.test/debug = "True"
-# Retrun bool type
 DEBUG = ENV_CONSUL.get_bool('/debug', True)
-...
+```
 
-# http://localhost:8500/v1/kv/web00.django.test/allowed_hosts = "example.com, example.com."
+
 # Return list type
+```
+# curl -X PUT -d "example.com, example.com." http://localhost:8500/v1/kv/web00.django.test/allowed_hosts
 ALLOWED_HOSTS = []
 ALLOWED_HOSTS += ENV_CONSUL.get_list('/allowed_hosts', [])
+```
 ...
 
 # http://localhost:8500/v1/kv/web00.django.test/installed_apps = "django.contrib.admin, env"
