@@ -8,7 +8,7 @@ Python environment variable wrapper around Consul key/value storage. When instan
 - Typed retrieval of environment variables
 - EnvConsol object implements a simple ReadOnly/Immutable dict
 - Implemented using supported Python's Consul `consulate`
-  - (https://github.com/gmr/consulate)[https://github.com/gmr/consulate]
+  - [https://github.com/gmr/consulate](https://github.com/gmr/consulate])
 
 
 ## Install

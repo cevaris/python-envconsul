@@ -1,4 +1,4 @@
-readme = open('README.rst').read()
+readme = open('README.md').read()
 
 try:
     from setuptools import setup
@@ -12,10 +12,8 @@ setup(
     long_description="""TODO""",
     author='Adam Cardenas',
     author_email='cevaris@gmail.com',
-    url='https://github.com/cevaris/envconsul',
-    packages=[
-        'envconsul',
-        ],
+    url='https://github.com/cevaris/python-envconsul',
+    packages=['envconsul',],
     include_package_data=True,
     install_requires=[
         'consulate==0.2.0',
@@ -29,11 +27,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         ],
 
 )
