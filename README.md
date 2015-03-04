@@ -13,7 +13,7 @@ EnvConsul can fetch and be queried like so
 ```python
 import envconsul
 ENV_CONSUL = envconsul.EnvConsul('web00.django.test')
-DATABASE_NAME = ENV_CONSUL.get_str('/databases/default/engine')
+DATABASE_NAME = ENV_CONSUL.get_str('/databases/default/name')
 ```
 
 ## Features
