@@ -43,10 +43,12 @@ class EnvConsul(collections.Mapping):
     def get_str(self, key, default=None):
         return str(self._d.get(key, default))
 
-    def get_tuple(self, key, default=[]):
+    def get_tuple(self, key, default=None):
+        default = default or tuple()
         return tuple(self.get_list(key, default))
 
-    def get_list(self, key, default=[]):
+    def get_list(self, key, default=None):
+        default = default or []
         data = self._d.get(key, default)
         if data and LIST_DELIM in data:
             data = data.split(LIST_DELIM)
