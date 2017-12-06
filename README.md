@@ -57,7 +57,7 @@ ENV_CONSUL = envconsul.EnvConsul(
 ##### Bool type
 
 ```shell
-curl -x PUT -d 'True' http://localhost:8500/v1/kv/web00.django.test/debug
+curl -X PUT -d 'True' http://localhost:8500/v1/kv/web00.django.test/debug
 ```
 
 ```python
